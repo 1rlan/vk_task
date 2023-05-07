@@ -28,11 +28,11 @@ struct GameCellView: View {
                 )
             switch state {
             case .cross:
-                Image(systemName: "multiply")
+                SymbolModels.multyply.image
                     .font(.system(size: 50))
                     .foregroundColor(.red)
             case .circle:
-                Image(systemName: "circle")
+                SymbolModels.circle.image
                     .font(.system(size: 50))
                     .foregroundColor(.blue)
             default:

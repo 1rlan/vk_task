@@ -7,14 +7,41 @@
 
 import SwiftUI
 
-struct Overlat: View {
+struct OverlayView: View {
+    init(showOverlay: Binding<Bool>, textOverlay: Binding<String>) {
+        self._showOverlay = showOverlay
+        self._textOverlay = textOverlay
+    }
+    
+    @Binding private var showOverlay: Bool
+    @Binding private var textOverlay: String
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ZStack {
+            Color.black.opacity(0.5)
+                .edgesIgnoringSafeArea(.all)
+            VStack {
+                Text(textOverlay)
+                    .font(.title)
+                    .foregroundColor(.white)
+                    .padding()
+                
+                Button(action: {
+                    showOverlay = false
+                }) {
+                    Text("Close")
+                        .foregroundColor(.white)
+                        .padding()
+                        .background(Color.blue)
+                        .cornerRadius(10)
+                }
+            }
+        }
     }
 }
 
-struct Overlat_Previews: PreviewProvider {
+struct OverlayView_Previews: PreviewProvider {
     static var previews: some View {
-        Overlat()
+        OverlayView(showOverlay: .constant(true), textOverlay: .constant("First player won"))
     }
 }

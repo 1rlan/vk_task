@@ -12,15 +12,9 @@ struct MenuButtonView: View {
     let gameState: GameState
 
     var body: some View {
-        NavigationLink(destination: GameView()) {
+        NavigationLink(destination: GameView(gameState: gameState)) {
             Text(text)
         }.buttonStyle(MenuButtonStyle())
-    }
-}
-
-struct MenuButtonView_Previews: PreviewProvider {
-    static var previews: some View {
-        MenuButtonView(text: "Bot player", gameState: .bot)
     }
 }
 
@@ -37,6 +31,12 @@ private struct MenuButtonStyle: ButtonStyle {
                     .stroke(Color.black, lineWidth: 1)
             )
             .scaleEffect(configuration.isPressed ? 0.9 : 1.0)
+    }
+}
+
+struct MenuButtonView_Previews: PreviewProvider {
+    static var previews: some View {
+        MenuButtonView(text: "Bot player", gameState: .bot)
     }
 }
 

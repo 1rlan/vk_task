@@ -29,5 +29,3 @@ struct GameRowView_Previews: PreviewProvider {
         GameRowView(cells: [.circle, .cross, .empty], updateCell: { print($0) })
     }
 }
-
-
