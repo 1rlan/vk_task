@@ -8,16 +8,14 @@
 import SwiftUI
 
 struct GameRowView: View {
-    let cells: [CellState]
+    let cells: [DrawState]
     let updateCell: (Int) -> Void
     
     var body: some View {
         HStack(spacing: 16) {
             ForEach(cells.indices, id: \.self) { index in
-                Button(action: {
-                    updateCell(index)
-                }) {
-                    GameCellView(state: cells[index])
+                Button(action: { updateCell(index) }) {
+                    // GameCellView(state: cells[index])
                 }
             }
         }
