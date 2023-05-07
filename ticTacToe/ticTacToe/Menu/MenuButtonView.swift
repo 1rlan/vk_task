@@ -9,18 +9,18 @@ import SwiftUI
 
 struct MenuButtonView: View {
     let text: String
-    let tapAction: () -> Void
-    
+    let gameState: GameState
 
     var body: some View {
-        Button(text, action: tapAction)
-            .buttonStyle(MenuButtonStyle())
+        NavigationLink(destination: GameView()) {
+            Text(text)
+        }.buttonStyle(MenuButtonStyle())
     }
 }
 
 struct MenuButtonView_Previews: PreviewProvider {
     static var previews: some View {
-        MenuButtonView(text: "Bot Play", tapAction: {})
+        MenuButtonView(text: "Bot player", gameState: .bot)
     }
 }
 
@@ -39,6 +39,5 @@ private struct MenuButtonStyle: ButtonStyle {
             .scaleEffect(configuration.isPressed ? 0.9 : 1.0)
     }
 }
-
 
 private let screenHeight = UIScreen.main.bounds.height

@@ -9,12 +9,14 @@ import SwiftUI
 
 struct MenuView: View {
     var body: some View {
-        VStack(spacing: 10) {
-            MenuTitleView().padding(.top, 40)
-            Spacer()
-            MenuButtonView(text: "With Bot", tapAction: {} )
-            MenuButtonView(text: "With player", tapAction: {})
-        }.padding(.horizontal, 30)
+        NavigationView {
+            VStack {
+                MenuTitleView().padding(.top, 10)
+                Spacer()
+                MenuButtonView(text: "With Bot", gameState: .bot)
+                MenuButtonView(text: "With player", gameState: .player)
+            }.padding(.horizontal, 16)
+        }
     }
 }
 
