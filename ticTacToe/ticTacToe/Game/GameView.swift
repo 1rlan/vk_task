@@ -7,13 +7,35 @@
 
 import SwiftUI
 
+class TabbarState: ObservableObject {
+    enum State : String {
+        case first = "First player's turn"
+        case second = "Second player's turn"
+        case bot = "Bot's turn..."
+        
+        mutating func toggle(gameState: GameState) {
+            switch self {
+            case .first:
+                self = gameState == GameState.bot ? .bot : .second
+            case .second:
+                self = .first
+            case .bot:
+                self = .first
+            }
+        }
+    }
+    
+    @Published var state: State = .first
+}
+
 struct GameView: View {
     @Environment(\.presentationMode) var presentationMode
     
     @State private var showOverlay = false
     @State private var textOverlay = ""
-    @State private var tabbarText = "First player's turn"
     @State private var currentPlayer: DrawState = .circle
+    
+    @StateObject var tabbarState = TabbarState()
     @StateObject var finishState = FinishObservable()
     @ObservedObject private var field = GameField()
     
@@ -25,7 +47,7 @@ struct GameView: View {
             VStack(spacing: 16) {
                 ZStack {
                     TabBarButtonView(tapAction: popView)
-                    Text(tabbarText).font(.custom("Futura", size: 22))
+                    Text(tabbarState.state.rawValue).font(.custom("Futura", size: 22))
                 }
                 Spacer()
                 ForEach(0..<3) { rowIndex in
@@ -57,7 +79,8 @@ struct GameView: View {
     private func updateCell(_ index: Int) {
         if field.cells[index] == .empty {
             field.cells[index] = currentPlayer
-            currentPlayer = currentPlayer == .circle ? .cross : .circle
+            currentPlayer.toggle()
+            tabbarState.state.toggle(gameState: gameState)
         }
     }
 

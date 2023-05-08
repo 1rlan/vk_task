@@ -11,4 +11,12 @@ enum DrawState {
     case empty
     case cross
     case circle
+    
+    mutating func toggle() {
+        if self == .circle {
+            self = .cross
+        } else if self == .cross {
+            self = .circle
+        }
+    }
 }
