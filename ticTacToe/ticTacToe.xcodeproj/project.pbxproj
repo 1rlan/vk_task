@@ -23,6 +23,7 @@
 		D6CF8F9A2A0864F4006E7DB6 /* TabBarButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6CF8F992A0864F4006E7DB6 /* TabBarButtonView.swift */; };
 		D6CF8F9C2A086A2C006E7DB6 /* DrawState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6CF8F9B2A086A2C006E7DB6 /* DrawState.swift */; };
 		D6CF8F9E2A086ED5006E7DB6 /* GameField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6CF8F9D2A086ED5006E7DB6 /* GameField.swift */; };
+		D6CF8FA02A087945006E7DB6 /* tabbarState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6CF8F9F2A087945006E7DB6 /* tabbarState.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,7 @@
 		D6CF8F992A0864F4006E7DB6 /* TabBarButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarButtonView.swift; sourceTree = "<group>"; };
 		D6CF8F9B2A086A2C006E7DB6 /* DrawState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawState.swift; sourceTree = "<group>"; };
 		D6CF8F9D2A086ED5006E7DB6 /* GameField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameField.swift; sourceTree = "<group>"; };
+		D6CF8F9F2A087945006E7DB6 /* tabbarState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tabbarState.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 		D6BD6E532A081DD200B403FB = {
 			isa = PBXGroup;
 			children = (
+				D6CF8F9F2A087945006E7DB6 /* tabbarState.swift */,
 				D6CF8F9D2A086ED5006E7DB6 /* GameField.swift */,
 				D6BD6E5F2A081DD200B403FB /* ticTacToeApp.swift */,
 				D6BD6E612A081DD200B403FB /* ContentView.swift */,
@@ -191,6 +194,7 @@
 			files = (
 				D6BD6E6E2A081F5200B403FB /* MenuButtonView.swift in Sources */,
 				D6CF8F9C2A086A2C006E7DB6 /* DrawState.swift in Sources */,
+				D6CF8FA02A087945006E7DB6 /* tabbarState.swift in Sources */,
 				D6CF8F9E2A086ED5006E7DB6 /* GameField.swift in Sources */,
 				D6CF8F982A085D0C006E7DB6 /* OverlayView.swift in Sources */,
 				D6BD6E752A0830FA00B403FB /* MenuView.swift in Sources */,

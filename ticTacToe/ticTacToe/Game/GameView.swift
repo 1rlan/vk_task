@@ -7,27 +7,6 @@
 
 import SwiftUI
 
-class TabbarState: ObservableObject {
-    enum State : String {
-        case first = "First player's turn"
-        case second = "Second player's turn"
-        case bot = "Bot's turn..."
-        
-        mutating func toggle(gameState: GameState) {
-            switch self {
-            case .first:
-                self = gameState == GameState.bot ? .bot : .second
-            case .second:
-                self = .first
-            case .bot:
-                self = .first
-            }
-        }
-    }
-    
-    @Published var state: State = .first
-}
-
 struct GameView: View {
     @Environment(\.presentationMode) var presentationMode
     
@@ -80,7 +59,48 @@ struct GameView: View {
         if field.cells[index] == .empty {
             field.cells[index] = currentPlayer
             currentPlayer.toggle()
+
+            checkForWinner()
+            
             tabbarState.state.toggle(gameState: gameState)
+        }
+    }
+
+    
+    private func checkForWinner() {
+        let winningPatterns: [[Int]] = [
+            [0, 1, 2], [3, 4, 5], [6, 7, 8],
+            [0, 3, 6], [1, 4, 7], [2, 5, 8],
+            [0, 4, 8], [2, 4, 6]
+        ]
+
+        for pattern in winningPatterns {
+            let cell1 = field.cells[pattern[0]]
+            let cell2 = field.cells[pattern[1]]
+            let cell3 = field.cells[pattern[2]]
+            
+            if cell1 != .empty && cell1 == cell2 && cell2 == cell3 {
+                switch tabbarState.state {
+                case .bot:
+                    finishState.selectedOption = .bot
+                case .first:
+                    finishState.selectedOption = .firstPlayer
+                case .second:
+                    finishState.selectedOption = .secondPlayer
+                }
+            }
+        }
+            
+        var isDraw = true
+        field.cells.forEach { cell in
+            if cell == .empty {
+                isDraw = false
+                return
+            }
+        }
+        
+        if (isDraw) {
+            finishState.selectedOption = .draw
         }
     }
 
