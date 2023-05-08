@@ -24,6 +24,7 @@
 		D6CF8F9C2A086A2C006E7DB6 /* DrawState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6CF8F9B2A086A2C006E7DB6 /* DrawState.swift */; };
 		D6CF8F9E2A086ED5006E7DB6 /* GameField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6CF8F9D2A086ED5006E7DB6 /* GameField.swift */; };
 		D6CF8FA02A087945006E7DB6 /* tabbarState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6CF8F9F2A087945006E7DB6 /* tabbarState.swift */; };
+		D6CF8FA22A0882F4006E7DB6 /* FindRandomIndexFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6CF8FA12A0882F4006E7DB6 /* FindRandomIndexFunc.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +46,7 @@
 		D6CF8F9B2A086A2C006E7DB6 /* DrawState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawState.swift; sourceTree = "<group>"; };
 		D6CF8F9D2A086ED5006E7DB6 /* GameField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameField.swift; sourceTree = "<group>"; };
 		D6CF8F9F2A087945006E7DB6 /* tabbarState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tabbarState.swift; sourceTree = "<group>"; };
+		D6CF8FA12A0882F4006E7DB6 /* FindRandomIndexFunc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindRandomIndexFunc.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 		D6BD6E532A081DD200B403FB = {
 			isa = PBXGroup;
 			children = (
+				D6CF8FA12A0882F4006E7DB6 /* FindRandomIndexFunc.swift */,
 				D6CF8F9F2A087945006E7DB6 /* tabbarState.swift */,
 				D6CF8F9D2A086ED5006E7DB6 /* GameField.swift */,
 				D6BD6E5F2A081DD200B403FB /* ticTacToeApp.swift */,
@@ -202,6 +205,7 @@
 				D6CF8F9A2A0864F4006E7DB6 /* TabBarButtonView.swift in Sources */,
 				D6BD6E702A0828AF00B403FB /* MenuTitleView.swift in Sources */,
 				D6BD6E622A081DD200B403FB /* ContentView.swift in Sources */,
+				D6CF8FA22A0882F4006E7DB6 /* FindRandomIndexFunc.swift in Sources */,
 				D6BD6E792A08342800B403FB /* GameState.swift in Sources */,
 				D6BD6E722A082C3D00B403FB /* SymbolModels.swift in Sources */,
 				D6BD6E602A081DD200B403FB /* ticTacToeApp.swift in Sources */,

@@ -65,14 +65,22 @@ struct GameView: View {
             field.cells[index] = currentPlayer
             currentPlayer.toggle()
 
-            checkForWinner()
-            
-            tabbarState.state.toggle(gameState: gameState)
+            if !checkForWinner() {
+                tabbarState.state.toggle(gameState: gameState)
+                
+                if (gameState == .bot && tabbarState.state == .bot) {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                        updateCell(findRandomIndex(in: field.cells, matching: .empty) ?? 0)
+                    }
+                }
+            } else {
+                tabbarState.state.toggle(gameState: gameState)
+            }
         }
     }
 
     
-    private func checkForWinner() {
+    private func checkForWinner() -> Bool {
         let winningPatterns: [[Int]] = [
             [0, 1, 2], [3, 4, 5], [6, 7, 8],
             [0, 3, 6], [1, 4, 7], [2, 5, 8],
@@ -93,6 +101,8 @@ struct GameView: View {
                 case .second:
                     finishState.selectedOption = .secondPlayer
                 }
+                
+                return true
             }
         }
             
@@ -106,7 +116,10 @@ struct GameView: View {
         
         if (isDraw) {
             finishState.selectedOption = .draw
+            return true
         }
+        
+        return false
     }
 
     func resetFiled() {
