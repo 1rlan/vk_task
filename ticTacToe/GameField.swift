@@ -13,4 +13,8 @@ class GameField: ObservableObject {
     func updateCell(at index: Int, with state: DrawState) {
         cells[index] = state
     }
+    
+    func resetCells() {
+        cells = Array(repeating: .empty, count: 9)
+    }
 }

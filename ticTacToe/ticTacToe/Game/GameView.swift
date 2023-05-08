@@ -42,7 +42,12 @@ struct GameView: View {
                 Spacer()
             }.padding(.horizontal, 16)
             if showOverlay {
-                OverlayView(showOverlay: $showOverlay, textOverlay: $textOverlay).transition(.opacity)
+                OverlayView(showOverlay: $showOverlay,
+                            textOverlay: $textOverlay,
+                            popViewAction: popView,
+                            resetFieldAction: resetFiled)
+                    
+                    .transition(.opacity)
             }
         }
         .navigationBarBackButtonHidden(true)
@@ -104,9 +109,15 @@ struct GameView: View {
         }
     }
 
+    func resetFiled() {
+        currentPlayer = .circle
+        tabbarState.state = .first
+        field.resetCells()
+    }
     
     func popView() {
-        self.presentationMode.wrappedValue.dismiss()
+        resetFiled()
+        presentationMode.wrappedValue.dismiss()
     }
 }
 
