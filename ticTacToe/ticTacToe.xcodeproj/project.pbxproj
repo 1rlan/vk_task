@@ -23,7 +23,7 @@
 		D6CF8F9A2A0864F4006E7DB6 /* TabBarButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6CF8F992A0864F4006E7DB6 /* TabBarButtonView.swift */; };
 		D6CF8F9C2A086A2C006E7DB6 /* DrawState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6CF8F9B2A086A2C006E7DB6 /* DrawState.swift */; };
 		D6CF8F9E2A086ED5006E7DB6 /* GameField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6CF8F9D2A086ED5006E7DB6 /* GameField.swift */; };
-		D6CF8FA02A087945006E7DB6 /* tabbarState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6CF8F9F2A087945006E7DB6 /* tabbarState.swift */; };
+		D6CF8FA02A087945006E7DB6 /* TabbarState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6CF8F9F2A087945006E7DB6 /* TabbarState.swift */; };
 		D6CF8FA22A0882F4006E7DB6 /* FindRandomIndexFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6CF8FA12A0882F4006E7DB6 /* FindRandomIndexFunc.swift */; };
 /* End PBXBuildFile section */
 
@@ -45,7 +45,7 @@
 		D6CF8F992A0864F4006E7DB6 /* TabBarButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarButtonView.swift; sourceTree = "<group>"; };
 		D6CF8F9B2A086A2C006E7DB6 /* DrawState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawState.swift; sourceTree = "<group>"; };
 		D6CF8F9D2A086ED5006E7DB6 /* GameField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameField.swift; sourceTree = "<group>"; };
-		D6CF8F9F2A087945006E7DB6 /* tabbarState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tabbarState.swift; sourceTree = "<group>"; };
+		D6CF8F9F2A087945006E7DB6 /* TabbarState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarState.swift; sourceTree = "<group>"; };
 		D6CF8FA12A0882F4006E7DB6 /* FindRandomIndexFunc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindRandomIndexFunc.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -63,9 +63,6 @@
 		D6BD6E532A081DD200B403FB = {
 			isa = PBXGroup;
 			children = (
-				D6CF8FA12A0882F4006E7DB6 /* FindRandomIndexFunc.swift */,
-				D6CF8F9F2A087945006E7DB6 /* tabbarState.swift */,
-				D6CF8F9D2A086ED5006E7DB6 /* GameField.swift */,
 				D6BD6E5F2A081DD200B403FB /* ticTacToeApp.swift */,
 				D6BD6E612A081DD200B403FB /* ContentView.swift */,
 				D6BD6E5E2A081DD200B403FB /* ticTacToe */,
@@ -84,10 +81,10 @@
 		D6BD6E5E2A081DD200B403FB /* ticTacToe */ = {
 			isa = PBXGroup;
 			children = (
-				D6CF8F992A0864F4006E7DB6 /* TabBarButtonView.swift */,
+				D6CF8FA42A08872A006E7DB6 /* States */,
+				D6CF8FA32A08871A006E7DB6 /* Tools */,
 				D6BD6E802A0854F200B403FB /* Game */,
 				D6BD6E732A0830DC00B403FB /* Menu */,
-				D6BD6E712A082C3D00B403FB /* SymbolModels.swift */,
 				D6BD6E632A081DD300B403FB /* Assets.xcassets */,
 				D6BD6E652A081DD300B403FB /* Preview Content */,
 			);
@@ -115,6 +112,7 @@
 		D6BD6E802A0854F200B403FB /* Game */ = {
 			isa = PBXGroup;
 			children = (
+				D6CF8F992A0864F4006E7DB6 /* TabBarButtonView.swift */,
 				D6BD6E782A08342800B403FB /* GameState.swift */,
 				D6BD6E832A08558D00B403FB /* GameView.swift */,
 				D6CF8F972A085D0C006E7DB6 /* OverlayView.swift */,
@@ -123,6 +121,24 @@
 				D6CF8F9B2A086A2C006E7DB6 /* DrawState.swift */,
 			);
 			path = Game;
+			sourceTree = "<group>";
+		};
+		D6CF8FA32A08871A006E7DB6 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				D6CF8FA12A0882F4006E7DB6 /* FindRandomIndexFunc.swift */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		D6CF8FA42A08872A006E7DB6 /* States */ = {
+			isa = PBXGroup;
+			children = (
+				D6CF8F9F2A087945006E7DB6 /* TabbarState.swift */,
+				D6CF8F9D2A086ED5006E7DB6 /* GameField.swift */,
+				D6BD6E712A082C3D00B403FB /* SymbolModels.swift */,
+			);
+			path = States;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -197,7 +213,7 @@
 			files = (
 				D6BD6E6E2A081F5200B403FB /* MenuButtonView.swift in Sources */,
 				D6CF8F9C2A086A2C006E7DB6 /* DrawState.swift in Sources */,
-				D6CF8FA02A087945006E7DB6 /* tabbarState.swift in Sources */,
+				D6CF8FA02A087945006E7DB6 /* TabbarState.swift in Sources */,
 				D6CF8F9E2A086ED5006E7DB6 /* GameField.swift in Sources */,
 				D6CF8F982A085D0C006E7DB6 /* OverlayView.swift in Sources */,
 				D6BD6E752A0830FA00B403FB /* MenuView.swift in Sources */,
